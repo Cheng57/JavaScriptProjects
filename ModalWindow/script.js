@@ -5,22 +5,23 @@ const modal = document.querySelector('.modal');
 const btncloseModal = document.querySelector('.close-modal');
 const overlay = document.querySelector('.overlay');
 
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
 // Show modal window and overlay when buttons are clicked
 for (let i = 0; i < btnsModal.length; i++) {
-  btnsModal[i].addEventListener('click', function () {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-  });
+  btnsModal[i].addEventListener('click', openModal);
 }
 
 // Disappear modal window and overlay when closeModal button is clicked
-btncloseModal.addEventListener('click', function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+btncloseModal.addEventListener('click', closeModal);
 
 // Disappear modal window and overlay when overlay is clicked
-overlay.addEventListener('click', function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+overlay.addEventListener('click', closeModal);
