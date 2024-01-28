@@ -2,7 +2,7 @@
 // Select elements and assign them into variables
 const btnsModal = document.querySelectorAll('.show-modal');
 const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.close-modal');
+const btncloseModal = document.querySelector('.close-modal');
 const overlay = document.querySelector('.overlay');
 
 // Show modal window and overlay when buttons are clicked
@@ -14,7 +14,7 @@ for (let i = 0; i < btnsModal.length; i++) {
 }
 
 // Disappear modal window and overlay when closeModal button is clicked
-closeModal.addEventListener('click', function () {
+btncloseModal.addEventListener('click', function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 });
