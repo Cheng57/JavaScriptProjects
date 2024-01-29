@@ -25,3 +25,12 @@ btncloseModal.addEventListener('click', closeModal);
 
 // Disappear modal window and overlay when overlay is clicked
 overlay.addEventListener('click', closeModal);
+
+// Close modal when Escape key is press down
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    if (!modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  }
+});
