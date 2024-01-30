@@ -93,6 +93,9 @@ btnNewGame.addEventListener('click', function () {
   currentScore[0].textContent = 0;
   currentScore[1].textContent = 0;
 
+  // Reset the temporary score
+  tmpScore = 0;
+
   // Hide the dice image
   diceImg.style.display = 'none';
 });
