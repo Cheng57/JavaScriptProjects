@@ -15,8 +15,8 @@ btnRollDice.addEventListener('click', function () {
   let randomNumber = Math.trunc(Math.random() * 6 + 1);
 
   // Display the dice image if it is hidden
-  if (diceImg.style.visibility === 'hidden') {
-    diceImg.style.visibility = '';
+  if (diceImg.style.display === 'none') {
+    diceImg.style.display = 'block';
   }
   // Update the dice image source
   diceImg.src = `dice-${randomNumber}.png`;
@@ -94,5 +94,5 @@ btnNewGame.addEventListener('click', function () {
   currentScore[1].textContent = 0;
 
   // Hide the dice image
-  diceImg.style.visibility = 'hidden';
+  diceImg.style.display = 'none';
 });
