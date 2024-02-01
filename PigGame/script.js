@@ -10,6 +10,9 @@ let tmpScore = 0;
 score[0].textContent = tmpScore;
 score[1].textContent = tmpScore;
 
+// default to hide dice image
+diceImg.style.display = 'none';
+
 btnRollDice.addEventListener('click', function () {
   // Generate a random number between 1 and 6
   let randomNumber = Math.trunc(Math.random() * 6 + 1);
@@ -98,4 +101,10 @@ btnNewGame.addEventListener('click', function () {
 
   // Hide the dice image
   diceImg.style.display = 'none';
+
+  // Switch to player 1 as default
+  if (player[1].classList.contains('player--active')) {
+    player[1].classList.remove('player--active');
+    player[0].classList.add('player--active');
+  }
 });
