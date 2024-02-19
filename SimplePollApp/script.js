@@ -10,21 +10,25 @@ const poll = {
     if (input !== null && input !== '') {
       let answer = Number(input);
       console.log(answer);
+
+      //Short circuiting
       typeof answer === 'number' &&
         answer < this.options.length &&
         this.answers[answer]++;
     }
     this.displayResults();
   },
-  displayResults: function (type = 'array') {
-    if (type === 'string') {
-      console.log(
-        `Poll results are ${this.answers[0]}, ${this.answers[1]}, ${this.answers[2]}, ${this.answers[3]}`
-      );
-    } else if (type === 'array') {
-      console.log(this.answers);
-    }
-  },
+  displayResults:
+    //Set default value of "type" to "array"
+    function (type = 'array') {
+      if (type === 'string') {
+        console.log(
+          `Poll results are ${this.answers[0]}, ${this.answers[1]}, ${this.answers[2]}, ${this.answers[3]}`
+        );
+      } else if (type === 'array') {
+        console.log(this.answers);
+      }
+    },
 };
 
 //Use the bind() method to binds the "this" value to the poll object.
