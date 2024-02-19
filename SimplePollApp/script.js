@@ -5,7 +5,7 @@ const poll = {
   answers: new Array(4).fill(0),
   registerNewAnswer: function () {
     let input = prompt(
-      'what is your favorite programming language?\n0: JavaScript\n1: Python\n2: Rust\n3: C++\n (Write option number)'
+      `${this.question}\n${this.options.join('\n')}\n(Write option number)`
     );
     if (input !== null) {
       let answer = Number(input);
