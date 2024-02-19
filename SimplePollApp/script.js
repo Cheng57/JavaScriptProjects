@@ -7,23 +7,12 @@ const poll = {
     let input = prompt(
       `${this.question}\n${this.options.join('\n')}\n(Write option number)`
     );
-    if (input !== null) {
+    if (input !== null && input !== '') {
       let answer = Number(input);
       console.log(answer);
-      switch (answer) {
-        case 0:
-          this.answers[0]++;
-          break;
-        case 1:
-          this.answers[1]++;
-          break;
-        case 2:
-          this.answers[2]++;
-          break;
-        case 3:
-          this.answers[3]++;
-          break;
-      }
+      typeof answer === 'number' &&
+        answer < this.options.length &&
+        this.answers[answer]++;
     }
     this.displayResults();
   },
